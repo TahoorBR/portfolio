@@ -1,0 +1,92 @@
+[
+  {
+    "category": "Core Machine Learning",
+    "skills": [
+      { "name": "Machine Learning", "level": 99 },
+      { "name": "Supervised Learning", "level": 99 },
+      { "name": "Unsupervised Learning", "level": 90 },
+      { "name": "Feature Engineering", "level": 90 },
+      { "name": "Model Tuning", "level": 85 }
+    ]
+  },
+  {
+    "category": "Deep Learning & Neural Networks",
+    "skills": [
+      { "name": "Deep Learning", "level": 90 },
+      { "name": "ANN / CNN", "level": 90 },
+      { "name": "GANs", "level": 75 },
+      { "name": "Natural Language Processing", "level": 85 },
+      { "name": "Computer Vision", "level": 95 }
+    ]
+  },
+  {
+    "category": "AI Frameworks & Tools",
+    "skills": [
+      { "name": "TensorFlow", "level": 85 },
+      { "name": "Scikit-Learn", "level": 90 },
+      { "name": "Matplotlib / Seaborn", "level": 80 },
+      { "name": "pandas / NumPy", "level": 90 },
+      { "name": "Visualization (Power BI)", "level": 80 }
+    ]
+  },
+  {
+    "category": "Data Science & Analysis",
+    "skills": [
+      { "name": "Data Analysis", "level": 90 },
+      { "name": "Data Preprocessing", "level": 85 },
+      { "name": "Model Evaluation", "level": 85 },
+      { "name": "Remote Sensing", "level": 70 },
+      { "name": "Quantum GIS", "level": 65 }
+    ]
+  },
+  {
+    "category": "Embedded Systems & Hardware",
+    "skills": [
+      { "name": "Arduino Nano BLE Sense", "level": 70 },
+      { "name": "Signal Processing", "level": 90 },
+      { "name": "Real-Time Data Analysis", "level": 75 },
+      { "name": "Assembly Language", "level": 95 },
+      { "name": "Microcontrollers", "level": 70 }
+    ]
+  },
+  {
+    "category": "Programming & Development",
+    "skills": [
+      { "name": "Python", "level": 95 },
+      { "name": "Rust", "level": 70 },
+      { "name": "APIs", "level": 90 },
+      { "name": "HTML/CSS/JavaScript", "level": 75 },
+      { "name": "React", "level": 75 }
+    ]
+  },
+  {
+    "category": "Web & Backend",
+    "skills": [
+      { "name": "Flask", "level": 99 },
+      { "name": "Database Systems (SQL)", "level": 80 },
+      { "name": "FastAPI", "level": 80 },
+      { "name": "RESTful API Design", "level": 75 },
+      { "name": "Authentication & Authorization", "level": 70 }
+    ]
+  },
+  {
+    "category": "Soft Skills",
+    "skills": [
+      { "name": "Problem-Solving", "level": 90 },
+      { "name": "Critical Thinking", "level": 85 },
+      { "name": "Team Collaboration & Leadership", "level": 80 },
+      { "name": "Adaptability & Learning", "level": 85 },
+      { "name": "Time Management", "level": 80 }
+    ]
+  },
+  {
+    "category": "Workplace Skills",
+    "skills": [
+      { "name": "Multi-tasking", "level": 75 },
+      { "name": "Client Communication", "level": 80 },
+      { "name": "Documentation & Reporting", "level": 75 },
+      { "name": "Agile / Scrum", "level": 70 },
+      { "name": "Remote Collaboration", "level": 75 }
+    ]
+  }
+]

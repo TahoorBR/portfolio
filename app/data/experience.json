@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "role": "Junior AI Engineer",
+    "company": "CareCloud",
+    "location": "Bagh",
+    "startDate": "2025-07",
+    "endDate": "Present",
+    "description": "Contributing to machine learning model development, data analysis, and real-world healthcare technology solutions."
+  },
+  {
+    "id": 2,
+    "role": "IT Intern",
+    "company": "CareCloud",
+    "location": "Remote",
+    "startDate": "2025-05",
+    "endDate": "2025-07",
+    "description": "Learning and contributing to machine learning model development, data analysis, and real-world healthcare technology solutions."
+  },
+  {
+    "id": 3,
+    "role": "AI Engineer - Freelance",
+    "company": "Fiverr / Upwork",
+    "location": "Remote",
+    "startDate": "2023-09",
+    "endDate": "Present",
+    "description": "Created multiple AI projects across ML, DL, CV, NLP, RL, and LangChain applications."
+  },
+  {
+    "id": 4,
+    "role": "Research Assistant",
+    "company": "Department of Creative Technologies, Air University",
+    "location": "Islamabad",
+    "startDate": "2023-06",
+    "endDate": "2024-06",
+    "description": "Worked under Mr. Adnan Aslam, Lecturer, on analyzing student personality and demographic factors to predict academic performance based on OCEAN-5 personality traits."
+  },
+  {
+    "id": 5,
+    "role": "Machine Learning Intern",
+    "company": "Department of Creative Technologies, Air University",
+    "location": "Islamabad",
+    "startDate": "2023-07",
+    "endDate": "2023-09",
+    "description": "Gained hands-on experience in machine learning and research in the Department of Creative Technologies."
+  },
+  {
+    "id": 6,
+    "role": "Python Developer Intern",
+    "company": "128 Technologies",
+    "location": "Islamabad",
+    "startDate": "2023-07",
+    "endDate": "2023-08",
+    "description": "Gained hands-on experience in coding, problem-solving, and project management. Built a Doctor's Appointment Scheduler and Management System."
+  },
+  {
+    "id": 7,
+    "role": "AI and Data Science Intern",
+    "company": "Space Technologies and Applications Research Lab, Air University",
+    "location": "Islamabad",
+    "startDate": "2023-06",
+    "endDate": "2023-09",
+    "description": "Applied and enhanced skills in computer vision and remote sensing techniques for interpreting and analyzing satellite imagery."
+  }
+]

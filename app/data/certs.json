@@ -1,0 +1,27 @@
+{
+  "education": [
+    {
+      "institution": "Air University, Islamabad",
+      "degree": "BSc. Artificial Intelligence",
+      "cgpa": 3.65,
+      "duration": "Sep 2020 - Jul 2025"
+    }
+  ],
+  "certifications": [
+  {
+    "title": "Certified Python Programmer",
+    "issuer": "Python Career Trainers"
+  },
+  {
+    "title": "Machine Learning Specialization",
+    "issuer": "DeepLearning.AI, Coursera"
+  }
+  ],
+  "awards": [
+    "Google Coding Competition, Top 1000 globally",
+    "CS50 Puzzle Certificate Harvard CS50",
+    "Certificate of Achievement NaSCon 2023",
+    "High Honors for multiple semesters",
+    "Hackathon Winner Air-University 2021"
+  ]
+}
