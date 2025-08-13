@@ -425,7 +425,7 @@ export default function PortfolioLayout() {
           <LinkButton platform="email" href="mailto:mtahoorbinrauf@gmail.com" target="_blank">
             <FiMail />
           </LinkButton>
-          <LinkButton platform="linkedin" href="https://linkedin.com/in/m-tahoor-bin-rauf" target="_blank">
+          <LinkButton platform="linkedin" href="https://www.linkedin.com/in/m-tahoor-bin-rauf" target="_blank">
             <FaLinkedinIn />
           </LinkButton>
           <LinkButton platform="github" href="https://github.com/tahoorbr" target="_blank">
