@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Here’s a professional README you can use for your portfolio project, along with instructions to commit and push your changes to GitHub.
 
-## Getting Started
+---
 
-First, run the development server:
+# Muhammad Tahoor Bin Rauf – Portfolio
+
+Welcome to my personal AI engineer portfolio built with **Next.js**, **React**, and **styled-components**.
+It showcases my work experience, projects, skills, certifications, and more.
+
+🔗 **Live Demo:** [https://portfolio-sigma-dun-zixzbign8y.vercel.app/](https://portfolio-sigma-dun-zixzbign8y.vercel.app/)
+
+---
+
+## Features
+
+* **Responsive Design** – Smooth layout optimized for desktop and mobile.
+* **Custom Fonts** – Using Google Font **Bebas Neue** for headings.
+* **Interactive Sections** – Experience, Projects, Skills, Certifications, About Me.
+* **Chatbot Integration** – Simple AI chatbot for interactive experience.
+* **Glassmorphism UI** – Transparent glass-style cards with blur and shadow effects.
+* **Social Links** – Quick links to Email, LinkedIn, GitHub, and Upwork.
+
+---
+
+## Technologies Used
+
+* **Next.js 13+** (App Router)
+* **React 18+**
+* **TypeScript**
+* **styled-components**
+* **react-icons**
+* **Vercel** for deployment
+
+---
+
+## Installation & Running Locally
+
+1. Clone the repository:
+
+```bash
+git clone <your-repo-url>
+cd <your-project-folder>
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+This project is deployed on **Vercel**. Any changes pushed to the `main` branch trigger an automatic deployment.
 
-To learn more about Next.js, take a look at the following resources:
+Vercel link: [https://portfolio-sigma-dun-zixzbign8y.vercel.app/](https://portfolio-sigma-dun-zixzbign8y.vercel.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How to Commit & Push Changes
 
-## Deploy on Vercel
+1. Check Git status:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+git status
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Stage all changes:
+
+```bash
+git add .
+```
+
+3. Commit your changes:
+
+```bash
+git commit -m "Update portfolio layout, fix font issue, add Next.js Google Font"
+```
+
+4. Push to GitHub:
+
+```bash
+git push origin main
+```
+
+After pushing, Vercel will automatically deploy the updated portfolio.
+
+---
+
+## License
+
+This project is **open source** – feel free to explore and adapt it.
+
+---
+
+If you want, I can also **write the exact `git` commands in one block ready to paste** so you can commit and push your current font fix in one go.
+
+Do you want me to do that?
