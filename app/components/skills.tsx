@@ -32,7 +32,7 @@ interface SkillCategory {
 
 const SkillsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
   padding: 1rem;
 
@@ -40,14 +40,6 @@ const SkillsContainer = styled.div`
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-`;
-
-const CategoryTitle = styled.h3`
-  font-family: 'Bebas Neue', cursive;
-  font-size: 1.8rem;
-  color: #00c8b8;
-  text-align: center;
-  margin-bottom: 1rem;
 `;
 
 const ChartWrapper = styled.div`
@@ -62,6 +54,7 @@ const ChartWrapper = styled.div`
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 107, 95, 0.5);
   width: 100%;
+  box-sizing: border-box;
 
   @media (max-width: 480px) {
     padding: 1rem;
@@ -70,13 +63,24 @@ const ChartWrapper = styled.div`
 
 const ChartContainer = styled.div`
   width: 100%;
-  max-width: 400px;
-  height: 300px;
-
-  @media (max-width: 480px) {
-    height: 250px;
+  height: auto;
+  aspect-ratio: 1 / 1; /* Keep the radar chart square */
+  max-width: 100%;
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
   }
 `;
+
+
+const CategoryTitle = styled.h3`
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.8rem;
+  color: #00c8b8;
+  text-align: center;
+  margin-bottom: 1rem;
+`;
+
 
 function balanceSkills(skills: Skill[], targetCount = 5): Skill[] {
   if (skills.length >= targetCount) return skills;
