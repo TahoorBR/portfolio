@@ -1,7 +1,3 @@
-Here’s a professional README you can use for your portfolio project, along with instructions to commit and push your changes to GitHub.
-
----
-
 # Muhammad Tahoor Bin Rauf – Portfolio
 
 Welcome to my personal AI engineer portfolio built with **Next.js**, **React**, and **styled-components**.
@@ -101,7 +97,3 @@ After pushing, Vercel will automatically deploy the updated portfolio.
 This project is **open source** – feel free to explore and adapt it.
 
 ---
-
-If you want, I can also **write the exact `git` commands in one block ready to paste** so you can commit and push your current font fix in one go.
-
-Do you want me to do that?
