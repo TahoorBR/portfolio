@@ -1,15 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import certsData from "../data/certs.json";
 import skillsData from "../data/skills.json";
 import projectsData from "../data/projects.json";
-import aboutMeData from "../data/aboutMe.json";
 
-// Styled components
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
+
 const ChatBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -20,51 +22,75 @@ const ChatBox = styled.div`
   border-radius: 20px;
   box-shadow: 0 0 12px #00c8b8;
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  padding: 1rem;
+  padding: 0;
   overflow: hidden;
+`;
+
+const ChatHeader = styled.div`
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00c8b8;
+  border-bottom: none; /* Removed divider line */
 `;
 
 const Messages = styled.div`
   flex-grow: 1;
   overflow-y: auto;
-  margin-bottom: 0.8rem;
+  padding: 1rem;
   scrollbar-width: thin;
   scrollbar-color: #00c8b8 transparent;
 
   &::-webkit-scrollbar {
     width: 6px;
   }
-  &::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 10px;
-  }
   &::-webkit-scrollbar-thumb {
     background-color: #00c8b8;
     border-radius: 10px;
-    border: 2px solid transparent;
   }
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 `;
 
-const Message = styled.p<{ role: string }>`
-  color: ${({ role }) =>
-    role === "user" ? "#3b82f6" : role === "assistant" ? "#ddd" : "red"};
-  font-weight: ${({ role }) => (role === "user" ? "bold" : "normal")};
-  margin: 0.2rem 0;
+const MessageBubble = styled.div<{ role: string }>`
+  max-width: 80%;
+  align-self: ${({ role }) =>
+    role === "user" ? "flex-end" : "flex-start"};
+  background-color: ${({ role }) =>
+    role === "user" ? "rgba(0, 200, 184, 0.2)" : "rgba(255, 255, 255, 0.05)"};
+  border: 1px solid
+    ${({ role }) =>
+      role === "user" ? "#00c8b8" : "rgba(0, 200, 184, 0.5)"};
+  border-radius: 14px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
   line-height: 1.4;
+  animation: ${fadeIn} 0.3s ease;
+  word-break: break-word;
 `;
 
-const Highlight = styled.span`
-  color: #00fff2;
-  font-weight: bold;
-  text-decoration: underline;
+const Role = styled.div`
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-bottom: 0.2rem;
+`;
+
+const Content = styled.div`
+  highlight {
+    color: #00fff2;
+    font-weight: bold;
+    text-decoration: underline;
+  }
 `;
 
 const Form = styled.form`
   display: flex;
   gap: 0.5rem;
-  max-width: 100%;
-  align-items: center;
+  padding: 0.8rem;
+  border-top: none; /* Removed divider line */
 `;
 
 const Input = styled.input`
@@ -78,7 +104,6 @@ const Input = styled.input`
   font-family: 'Bebas Neue', cursive;
   font-size: 1.1rem;
   outline: none;
-  transition: border-color 0.3s ease;
 
   &:focus {
     border-color: #00fff2;
@@ -88,9 +113,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  height: 100%;
   padding: 0 1.2rem;
-  box-sizing: border-box;
   background: #00c8b8;
   border: none;
   border-radius: 14px;
@@ -99,7 +122,6 @@ const Button = styled.button`
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     background-color: #00fff2;
@@ -109,23 +131,45 @@ const Button = styled.button`
   &:disabled {
     background-color: #007663;
     cursor: not-allowed;
-    box-shadow: none;
   }
 `;
 
-// Convert raw AI text into HTML (Markdown + line breaks + bullets)
+const TypingDots = styled.div`
+  display: flex;
+  gap: 0.3rem;
+  padding: 0.4rem;
+  align-items: center;
+`;
+
+const Dot = styled.div`
+  width: 6px;
+  height: 6px;
+  background-color: #00c8b8;
+  border-radius: 50%;
+  animation: blink 1.4s infinite both;
+
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes blink {
+    0%, 80%, 100% { opacity: 0; }
+    40% { opacity: 1; }
+  }
+`;
+
+// Helpers
 const formatText = (text: string) => {
   return text
-    .replace(/\n/g, "<br>")                        // line breaks
-    .replace(/^### (.*$)/gim, "<h4>$1</h4>")       // H3 headers
-    .replace(/^## (.*$)/gim, "<h3>$1</h3>")        // H2 headers
-    .replace(/^# (.*$)/gim, "<h2>$1</h2>")         // H1 headers
-    .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")        // bold
-    .replace(/\*(.*?)\*/g, "<i>$1</i>")            // italic
-    .replace(/^- (.*$)/gim, "• $1");               // bullets
+    .replace(/\n/g, "<br>")
+    .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
+    .replace(/\*(.*?)\*/g, "<i>$1</i>")
+    .replace(/^- (.*$)/gim, "• $1");
 };
 
-// Highlight keywords in AI response
 const highlightKeywords = (text: string) => {
   const allKeywords = [
     ...skillsData.flatMap((cat: any) => cat.skills.map((s: any) => s.name)),
@@ -134,24 +178,23 @@ const highlightKeywords = (text: string) => {
     ...certsData.awards,
     ...certsData.education.map((e: any) => e.degree),
   ];
-
   let formatted = text;
   allKeywords.forEach((keyword) => {
     const regex = new RegExp(`\\b(${keyword})\\b`, "gi");
     formatted = formatted.replace(regex, "<highlight>$1</highlight>");
   });
-
   return formatted;
 };
 
 export default function Chatbot() {
   const [input, setInput] = useState("");
   const [chat, setChat] = useState<{ role: string; content: string }[]>([]);
+  const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [chat]);
+  }, [chat, loading]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -159,6 +202,7 @@ export default function Chatbot() {
     const userMessage = { role: "user", content: input };
     setChat((prev) => [...prev, userMessage]);
     setInput("");
+    setLoading(true);
 
     try {
       const res = await fetch("/api/chat", {
@@ -167,37 +211,48 @@ export default function Chatbot() {
         body: JSON.stringify({ messages: [...chat, userMessage] }),
       });
       const data = await res.json();
+      setLoading(false);
 
       if (data.error) {
         setChat((prev) => [...prev, { role: "error", content: data.error }]);
       } else {
-        // Highlight and format AI response
         const highlighted = highlightKeywords(data.reply);
         const formatted = formatText(highlighted);
-
-        setChat((prev) => [
-          ...prev,
-          { role: "assistant", content: formatted },
-        ]);
+        setChat((prev) => [...prev, { role: "assistant", content: formatted }]);
       }
-    } catch (err) {
+    } catch {
+      setLoading(false);
       setChat((prev) => [...prev, { role: "error", content: "Network error" }]);
     }
   };
 
   return (
     <ChatBox>
+      <ChatHeader>AI Assistant</ChatHeader>
       <Messages>
         {chat.map((msg, idx) => (
-          <Message
-            key={idx}
-            role={msg.role}
-            dangerouslySetInnerHTML={{ __html: msg.content }}
-          />
+          <MessageBubble key={idx} role={msg.role}>
+            <Role>
+              {msg.role === "user"
+                ? "You"
+                : msg.role === "assistant"
+                ? "AI"
+                : "Error"}
+            </Role>
+            <Content dangerouslySetInnerHTML={{ __html: msg.content }} />
+          </MessageBubble>
         ))}
+        {loading && (
+          <MessageBubble role="assistant">
+            <TypingDots>
+              <Dot />
+              <Dot />
+              <Dot />
+            </TypingDots>
+          </MessageBubble>
+        )}
         <div ref={messagesEndRef} />
       </Messages>
-
       <Form
         onSubmit={(e) => {
           e.preventDefault();
@@ -210,7 +265,7 @@ export default function Chatbot() {
           placeholder="Ask me anything..."
           autoComplete="off"
         />
-        <Button type="submit" disabled={!input.trim()}>
+        <Button type="submit" disabled={!input.trim() || loading}>
           Send
         </Button>
       </Form>

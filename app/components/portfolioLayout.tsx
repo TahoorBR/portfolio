@@ -19,10 +19,10 @@ const Container = styled.main`
   display: flex;
   justify-content: center;
   gap: 2.5rem;
-  padding: 3rem 3rem;
+  padding: 3rem;
   height: 85vh;
   max-width: 1200px;
-  margin: 3rem auto 3rem auto;
+  margin: 3rem auto;
   background: linear-gradient(135deg, #0b1216, #142024);
   border-radius: 28px;
   box-shadow:
@@ -31,6 +31,14 @@ const Container = styled.main`
   color: #cde4e3;
   font-family: 'Bebas Neue', cursive;
   user-select: none;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    margin: 1rem;
+    gap: 1rem;
+  }
 `;
 
 const GlassCard = styled.section`
@@ -46,6 +54,10 @@ const GlassCard = styled.section`
   color: #cde4e3;
   overflow: hidden;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 const LeftCard = styled(GlassCard)`
@@ -53,7 +65,13 @@ const LeftCard = styled(GlassCard)`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  justify-content: space-between;
+  justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    flex: unset;
+    width: 100%;
+    gap: 1rem;
+  }
 `;
 
 const InfoContainer = styled.div`
@@ -66,30 +84,50 @@ const Name = styled.h2`
   font-size: 2rem;
   color: #00c8b8;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Role = styled.p`
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const Location = styled.p`
   font-size: 1rem;
   color: #a0f0e0;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const Education = styled.p`
   font-size: 0.95rem;
   color: #a0f0e0;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const Bio = styled.p`
   font-size: 1rem;
   line-height: 1.5;
   margin-top: 0.5rem;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const LinksGlassCard = styled(GlassCard)`
@@ -109,6 +147,11 @@ const LinksGlassCard = styled(GlassCard)`
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border: 1.5px solid rgba(0, 107, 95, 0.65);
+
+  @media (max-width: 480px) {
+    gap: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
 `;
 
 const LinkButton = styled.a<{ platform?: string }>`
@@ -162,10 +205,13 @@ const LinkButton = styled.a<{ platform?: string }>`
       }
     }}
   }
+
+  @media (max-width: 480px) {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
 `;
-
-
-
 
 const Spacer = styled.div`
   flex-grow: 1;
@@ -177,6 +223,12 @@ const RightCard = styled(GlassCard)`
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    flex: unset;
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const PageSelector = styled.div`
@@ -184,6 +236,11 @@ const PageSelector = styled.div`
   justify-content: center;
   gap: 1rem;
   margin-bottom: 1rem;
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 `;
 
 const Button = styled.button<{ $active?: boolean }>`
@@ -202,6 +259,11 @@ const Button = styled.button<{ $active?: boolean }>`
     background: #007663;
     color: #cde4e3;
     border-color: #00c8b8;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.6rem;
   }
 `;
 
@@ -222,6 +284,10 @@ const Section = styled.section<{ $offsetY: number }>`
     margin-bottom: 1rem;
     color: #00c8b8;
     text-shadow: 0 0 12px #007663;
+
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
   }
 `;
 
@@ -251,6 +317,7 @@ const ScrollArea = styled.div`
 export default function PortfolioLayout() {
   const [page, setPage] = useState<"experience" | "projects" | "skills" | "certs" | "aboutMe">("experience");
   const [scrollOffset, setScrollOffset] = useState(0);
+  const [showChatbot, setShowChatbot] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const onScroll = () => {
@@ -278,28 +345,28 @@ export default function PortfolioLayout() {
             <Experience />
           </Section>
         );
-        case "projects":
+      case "projects":
         return (
-            <Section $offsetY={scrollOffset} key="projects">
+          <Section $offsetY={scrollOffset} key="projects">
             <Projects />
-            </Section>
+          </Section>
         );
-        case "skills":
+      case "skills":
         return (
-            <Section $offsetY={scrollOffset} key="skills">
+          <Section $offsetY={scrollOffset} key="skills">
             <Skills />
-            </Section>
+          </Section>
         );
-        case "certs":
+      case "certs":
         return (
-            <Section $offsetY={scrollOffset} key="certs">
+          <Section $offsetY={scrollOffset} key="certs">
             <Certs />
-            </Section>
+          </Section>
         );
       case "aboutMe":
         return (
           <Section $offsetY={scrollOffset} key="aboutMe">
-            <AboutMe/>
+            <AboutMe />
           </Section>
         );
       default:
@@ -309,63 +376,70 @@ export default function PortfolioLayout() {
 
   return (
     <>
-    <BackgroundParticles />
-    <Container>
-      <LeftCard>
-        <InfoContainer>
-          <Name>Muhammad Tahoor Bin Rauf</Name>
-          <Role>AI Engineer</Role>
-          <Location>Islamabad, Pakistan</Location>
-          <Education>BSc Artificial Intelligence</Education>
-          <Bio>
-            AI engineer with hands-on experience in model development and deep learning,
-            actively building expertise in Generative AI, Langchain, Agentic AI, and Computer Vision.
-            Passionate about intelligent systems leveraging LLMs, AI agents, and emerging AI tech.
-          </Bio>
-        </InfoContainer>
+      <BackgroundParticles />
+      <Container>
+        <LeftCard>
+          {!showChatbot ? (
+            <>
+              <Button onClick={() => setShowChatbot(true)}>Talk to my AI</Button>
+              <InfoContainer>
+                <Name>Muhammad Tahoor Bin Rauf</Name>
+                <Role>AI Engineer</Role>
+                <Location>Islamabad, Pakistan</Location>
+                <Education>BSc Artificial Intelligence</Education>
+                <Bio>
+                  AI engineer with hands-on experience in model development and deep learning,
+                  actively building expertise in Generative AI, Langchain, Agentic AI, and Computer Vision.
+                  Passionate about intelligent systems leveraging LLMs, AI agents, and emerging AI tech.
+                </Bio>
+              </InfoContainer>
+              <Spacer />
+            </>
+          ) : (
+            <>
+              <Button onClick={() => setShowChatbot(false)}>Back</Button>
+              <Chatbot />
+            </>
+          )}
+        </LeftCard>
 
-        <Spacer />
-        <Chatbot />
-      </LeftCard>
-
-      <RightCard>
-        <PageSelector>
-          {["experience", "projects", "skills", "certs", "aboutMe"].map((p) => (
-            <Button
-              key={p}
-              $active={page === p}
-              onClick={() => {
-                setPage(p as any);
-                if (scrollRef.current) scrollRef.current.scrollTop = 0;
-              }}
-            >
-              {p.charAt(0).toUpperCase() + p.slice(1)}
-            </Button>
-          ))}
-        </PageSelector>
-
-        <ScrollArea ref={scrollRef}>
-          {renderSection()}
-        </ScrollArea>
-      </RightCard>
+        <RightCard>
+          <PageSelector>
+            {["experience", "projects", "skills", "certs", "aboutMe"].map((p) => (
+              <Button
+                key={p}
+                $active={page === p}
+                onClick={() => {
+                  setPage(p as any);
+                  if (scrollRef.current) scrollRef.current.scrollTop = 0;
+                }}
+              >
+                {p.charAt(0).toUpperCase() + p.slice(1)}
+              </Button>
+            ))}
+          </PageSelector>
+          <ScrollArea ref={scrollRef}>{renderSection()}</ScrollArea>
+        </RightCard>
 
         <LinksGlassCard>
-            <LinkButton platform="email" href="mailto:mtahoorbinrauf@gmail.com" target="_blank">
-                <FiMail />
-            </LinkButton>
-            <LinkButton platform="linkedin" href="https://linkedin.com/in/m-tahoor-bin-rauf" target="_blank">
-                <FaLinkedinIn />
-            </LinkButton>
-            <LinkButton platform="github" href="https://github.com/tahoorbr" target="_blank">
-                <FaGithub />
-            </LinkButton>
-            <LinkButton platform="upwork" href="https://www.upwork.com/freelancers/~01f6079a84857bdd7f?" target="_blank">
-                <SiUpwork />
-            </LinkButton>
+          <LinkButton platform="email" href="mailto:mtahoorbinrauf@gmail.com" target="_blank">
+            <FiMail />
+          </LinkButton>
+          <LinkButton platform="linkedin" href="https://linkedin.com/in/m-tahoor-bin-rauf" target="_blank">
+            <FaLinkedinIn />
+          </LinkButton>
+          <LinkButton platform="github" href="https://github.com/tahoorbr" target="_blank">
+            <FaGithub />
+          </LinkButton>
+          <LinkButton
+            platform="upwork"
+            href="https://www.upwork.com/freelancers/~01f6079a84857bdd7f?"
+            target="_blank"
+          >
+            <SiUpwork />
+          </LinkButton>
         </LinksGlassCard>
-
-    </Container>
+      </Container>
     </>
-
   );
 }
