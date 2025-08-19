@@ -130,8 +130,6 @@ The portfolio is deployed using **Vercel**, enabling instant previews and produc
 
 🔗 Live Deployment: [https://tahoor.vercel.app/](https://tahoor.vercel.app/)
 
----
-
 ## 📌 How to Contribute / Customize
 
 If you'd like to adapt this portfolio for your own use:
