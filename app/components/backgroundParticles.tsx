@@ -62,6 +62,7 @@ export default function BackgroundParticles() {
           },
           shape: { type: "circle" },
           size: { value: { min: 2, max: 6 }, animation: { enable: true, speed: 3, minimumValue: 2, sync: false } },
+          font: { value: "'Exo 2', sans-serif" }
         },
         detectRetina: true,
       }}

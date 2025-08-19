@@ -74,7 +74,7 @@ const ChartContainer = styled.div`
 
 
 const CategoryTitle = styled.h3`
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Exo 2', sans-serif;
   font-size: 1.8rem;
   color: #00c8b8;
   text-align: center;

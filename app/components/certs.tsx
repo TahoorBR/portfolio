@@ -32,10 +32,11 @@ const Container = styled.div`
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 const SectionTitle = styled.h2`
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Exo 2', sans-serif;
   font-size: 2rem;
   color: #00c8b8;
   margin-bottom: 1rem;
@@ -55,12 +56,14 @@ const ItemTitle = styled.h3`
   font-weight: bold;
   margin: 0.3rem 0;
   color: #00c8b8;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 const ItemSubtitle = styled.p`
   margin: 0.2rem 0;
   color: #cde4e3;
   font-size: 0.95rem;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 export default function Certs() {

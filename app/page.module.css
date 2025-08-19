@@ -13,7 +13,7 @@
   min-height: 100svh;
   padding: 80px;
   gap: 64px;
-  font-family: var(--font-bebas);
+  font-family: 'Exo 2', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,7 +35,7 @@
 }
 
 .main ol {
-  font-family: var(--font-bebas);
+  font-family: 'Exo 2', sans-serif;
   padding-left: 0;
   margin: 0;
   font-size: 14px;

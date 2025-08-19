@@ -1,14 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
 html, body {
-  font-family: 'Bebas Neue', cursive;
-  font-style: normal;       /* prevent unwanted italics */
-  font-weight: 400;         /* normal weight */
+  font-family: 'Exo 2', sans-serif;   /* updated font */
+  font-style: normal;
+  font-weight: 400;
   color: var(--foreground);
   background: var(--background);
   -webkit-font-smoothing: antialiased;

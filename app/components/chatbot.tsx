@@ -16,7 +16,7 @@ const ChatBox = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Exo 2', sans-serif;
   color: #a0f0e0;
   background: rgba(0, 107, 95, 0.18);
   border-radius: 20px;
@@ -32,7 +32,8 @@ const ChatHeader = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
   color: #00c8b8;
-  border-bottom: none; /* Removed divider line */
+  border-bottom: none;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 const Messages = styled.div`
@@ -70,12 +71,14 @@ const MessageBubble = styled.div<{ role: string }>`
   line-height: 1.4;
   animation: ${fadeIn} 0.3s ease;
   word-break: break-word;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 const Role = styled.div`
   font-size: 0.8rem;
   opacity: 0.7;
   margin-bottom: 0.2rem;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 const Content = styled.div`
@@ -90,7 +93,7 @@ const Form = styled.form`
   display: flex;
   gap: 0.5rem;
   padding: 0.8rem;
-  border-top: none; /* Removed divider line */
+  border-top: none;
 `;
 
 const Input = styled.input`
@@ -101,7 +104,7 @@ const Input = styled.input`
   background: rgba(0, 107, 95, 0.35);
   color: #cde4e3;
   padding: 0.6rem 1rem;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Exo 2', sans-serif;
   font-size: 1.1rem;
   outline: none;
 
@@ -118,7 +121,7 @@ const Button = styled.button`
   border: none;
   border-radius: 14px;
   color: #0b1216;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Exo 2', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;

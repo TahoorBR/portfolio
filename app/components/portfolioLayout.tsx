@@ -29,7 +29,7 @@ const Container = styled.main`
     0 8px 30px rgba(1, 53, 48, 0.6),
     inset 0 0 80px rgba(1, 53, 48, 0.5);
   color: #cde4e3;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Exo 2', sans-serif;
   user-select: none;
 
   @media (max-width: 768px) {
@@ -244,7 +244,7 @@ const PageSelector = styled.div`
 `;
 
 const Button = styled.button<{ $active?: boolean }>`
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Exo 2', sans-serif;
   background: transparent;
   border: 2px solid ${({ $active }) => ($active ? "#00c8b8" : "#007663")};
   color: ${({ $active }) => ($active ? "#00c8b8" : "#007663")};
@@ -278,7 +278,7 @@ const Section = styled.section<{ $offsetY: number }>`
   transition: transform 0.2s ease;
 
   h2 {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Exo 2', sans-serif;
     font-weight: 700;
     font-size: 3rem;
     margin-bottom: 1rem;

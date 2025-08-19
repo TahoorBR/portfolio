@@ -37,7 +37,7 @@ const Title = styled.h3`
   margin: 0;
   font-size: 1.5rem;
   color: #00c8b8;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 // Tech stack
@@ -46,7 +46,7 @@ const Tech = styled.p`
   font-size: 0.95rem;
   font-style: italic;
   color: #66b2aa;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 // Description
@@ -54,7 +54,7 @@ const Description = styled.p`
   font-size: 1rem;
   line-height: 1.4;
   color: #b6d7d1;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 // Links container
@@ -69,7 +69,7 @@ const LinkButton = styled.a`
   text-decoration: none;
   color: #00c8b8;
   font-weight: 600;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Exo 2', sans-serif;
   transition: all 0.25s ease;
 
   &:hover {

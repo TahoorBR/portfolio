@@ -12,6 +12,7 @@ const ExperienceList = styled.div`
   flex-direction: column;
   gap: 2rem;
   position: relative;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 // Company card container
@@ -20,6 +21,7 @@ const CompanyCard = styled.div`
   padding-left: 2rem;
   border-left: 2px dotted #00c8b8;
   margin-left: 1rem;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 // Single job node
@@ -29,6 +31,7 @@ const JobNode = styled.div.withConfig({
   position: relative;
   padding: 0.8rem 0 0.8rem 1rem;
   margin-left: 0.5rem;
+  font-family: 'Exo 2', sans-serif;
 
   &:before {
     content: '';
@@ -42,12 +45,12 @@ const JobNode = styled.div.withConfig({
   }
 `;
 
-
 // Role title
 const Role = styled.h3`
   margin: 0;
   font-size: 1.5rem;
   color: #00c8b8;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 // Company name
@@ -56,6 +59,7 @@ const Company = styled.h4`
   font-weight: 600;
   font-style: italic;
   color: #cde4e3;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 // Duration
@@ -63,6 +67,7 @@ const Duration = styled.p`
   font-size: 0.9rem;
   color: #66b2aa;
   margin: 0.2rem 0 0.5rem 0;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 // Description
@@ -70,6 +75,7 @@ const Description = styled.p`
   font-size: 1rem;
   line-height: 1.4;
   color: #b6d7d1;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 export default function Experience() {

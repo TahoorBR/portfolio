@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Bebas_Neue } from "next/font/google"; // import Bebas Neue
+import { Exo_2 } from "next/font/google"; // import Exo 2
 import "./globals.css";
 
-const bebasNeue = Bebas_Neue({
+const exo2 = Exo_2({
   subsets: ["latin"],
   weight: "400",       // normal weight
-  variable: "--font-bebas", 
+  variable: "--font-exo2", 
 });
 
 export const metadata: Metadata = {
@@ -40,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${bebasNeue.variable} antialiased`}>
+      <body className={`${exo2.variable} antialiased`}>
         {children}
       </body>
     </html>

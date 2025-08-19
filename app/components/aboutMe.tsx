@@ -13,18 +13,21 @@ const Container = styled.div`
   padding: 2rem;
   max-width: 800px;
   margin: auto;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 const Title = styled.h2`
   font-size: 1.5rem;
   color: #cde4e3;
   font-weight: normal;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 const Paragraph = styled.p`
   font-size: 1rem;
   color: #e0f7f4;
   line-height: 1.6;
+  font-family: 'Exo 2', sans-serif;
 `;
 
 const ContactLinks = styled.div`
@@ -36,6 +39,7 @@ const ContactLinks = styled.div`
     color: #00c8b8;
     text-decoration: none;
     font-weight: bold;
+    font-family: 'Exo 2', sans-serif;
     &:hover {
       text-decoration: underline;
     }
