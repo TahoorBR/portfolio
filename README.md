@@ -146,7 +146,6 @@ This approach allows others to use the portfolio as a **template** while persona
 ## 📸 Preview
 
 ![Preview GIF](./public/images/preview.gif)
-```
 
 ---
 
