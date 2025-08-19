@@ -15,7 +15,6 @@ const Container = styled.div`
   margin: auto;
 `;
 
-
 const Title = styled.h2`
   font-size: 1.5rem;
   color: #cde4e3;
@@ -30,6 +29,7 @@ const Paragraph = styled.p`
 
 const ContactLinks = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   margin-top: 1rem;
   a {
@@ -57,6 +57,7 @@ export default function AboutMe() {
         <a href={data.contact.linkedin} target="_blank">LinkedIn</a>
         <a href={data.contact.github} target="_blank">GitHub</a>
         <a href={`tel:${data.contact.phone}`}>Phone</a>
+        <a href="/resume.pdf" target="_blank">Resume</a>
       </ContactLinks>
     </Container>
   );
