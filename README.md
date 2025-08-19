@@ -1,6 +1,5 @@
-# Muhammad Tahoor Bin Rauf – AI Engineer Portfolio
-
 ![Portfolio Banner](./public/images/banner.png)
+# Muhammad Tahoor Bin Rauf – AI Engineer Portfolio
 
 Welcome to my personal **AI-driven portfolio** built with **Next.js**, **React**, and **TypeScript**.
 This website highlights my journey as an AI Engineer, showcasing my **experience**, **projects**, **skills**, **certifications**, and a unique **interactive chatbot** that demonstrates my work with AI-powered user experiences.
@@ -148,8 +147,7 @@ This approach allows others to use the portfolio as a **template** while persona
 
 ## 📸 Preview
 
-```
-/public/images/preview.gif
+![Preview GIF](./public/images/preview.gif)
 ```
 
 ---
