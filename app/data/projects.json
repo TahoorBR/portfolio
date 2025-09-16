@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "title": "QuickBird - Freelancer Super-App",
+    "title": "QuickBird",
     "description": "A comprehensive AI-powered platform for freelancers to manage projects, generate proposals, contracts, and grow their business with intelligent automation. Features include AI-powered proposal generation, time tracking, project management, client management, and payment processing with Stripe integration.",
     "tech": "Next.js, FastAPI, TypeScript, Material UI, OpenAI API, PostgreSQL, Stripe",
-    "link": "https://github.com/TahoorBR/QuickBird",
-    "image": "/images/quickbird.pmg"
+    "link": "https://quickbird.vercel.app/",
+    "image": "/images/quickbird.png"
   },  
   {
     "id": 2,
