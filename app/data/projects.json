@@ -1,6 +1,14 @@
 [
   {
     "id": 1,
+    "title": "QuickBird - Freelancer Super-App",
+    "description": "A comprehensive AI-powered platform for freelancers to manage projects, generate proposals, contracts, and grow their business with intelligent automation. Features include AI-powered proposal generation, time tracking, project management, client management, and payment processing with Stripe integration.",
+    "tech": "Next.js, FastAPI, TypeScript, Material UI, OpenAI API, PostgreSQL, Stripe",
+    "link": "https://github.com/TahoorBR/QuickBird",
+    "image": "/images/quickbird.pmg"
+  },  
+  {
+    "id": 2,
     "title": "AI Teaching Assistant",
     "description": "An AI-powered Teaching Assistant that provides automated educator support using LLMs (Llama 3.2:3b) and LangChain for intelligent tutoring and assistance.",
     "tech": "LLM, LangChain, Generative AI",
@@ -8,7 +16,7 @@
     "image": "/images/ai-ta.jpg"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Floor Plans Image Generation",
     "description": "Generates realistic floor plan images from text prompts using GANs, combining Computer Vision and Generative AI techniques.",
     "tech": "GANs, Computer Vision, Generative AI",
@@ -16,7 +24,7 @@
     "image": "/images/floorplans.jpg"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "AI-driven Consumer Behaviour Prediction",
     "description": "Predicts consumer behavior in real-time to deliver personalized marketing promotions using Machine Learning and Agentic AI techniques.",
     "tech": "Machine Learning, Agentic AI",
@@ -24,7 +32,7 @@
     "image": "/images/consumer-behaviour.jpg"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Bias Mitigation for Job Applications",
     "description": "Reduces bias in automated job application screening using advanced Machine Learning models and fairness-aware algorithms.",
     "tech": "Machine Learning, Fairness",
@@ -32,7 +40,7 @@
     "image": "/images/bias-mitigation.png"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Alzheimer Disease Stage Classification",
     "description": "Classifies stages of Alzheimer’s disease from medical data using Machine Learning techniques to support early diagnosis and research.",
     "tech": "Machine Learning, Medical AI",
@@ -40,7 +48,7 @@
     "image": "/images/alzheimer.png"
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "USDA Prompt Matching with NLP",
     "description": "Matches USDA prompts efficiently using Fuzzy Matching and TF-IDF techniques for data analysis and NLP-driven insights.",
     "tech": "NLP, Data Analysis, Fuzzy Matching",
